@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build -t resume-env:latest .
     - name: Run the Build
-      run: docker run resume-env:latest --name resume-cont
+      run: docker run  --name resume-cont resume-env:latest
     - name: Copy contents from container
       run: |
         mkdir -p shared/output
