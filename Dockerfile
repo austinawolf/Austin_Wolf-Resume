@@ -2,9 +2,10 @@ FROM texlive/texlive:latest
 
 WORKDIR /build
 
-# RUN mkdir /build/source /build/output
 
-ADD shared /build
+ADD shared /build 
+RUN mkdir -p /build/output
+
 
 WORKDIR /build/source
 
