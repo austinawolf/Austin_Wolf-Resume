@@ -17,11 +17,10 @@ jobs:
     - name: Build the Docker image
       run: docker build -t resume-env:latest .
     - name: Run the Build
-      run: docker run -it resume-env:latest --name my-container
+      run: docker run  --name resume-cont resume-env:latest
     - name: Copy contents from container
       run: |
-        mkdir -p shared/output
-        docker cp my-resume-container:/build/output shared/output
+        docker cp resume-cont:/build/output shared/
     - name: Upload data as artifact
       uses: actions/upload-artifact@v3
       with:
