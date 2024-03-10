@@ -20,8 +20,7 @@ jobs:
       run: docker run  --name resume-cont resume-env:latest
     - name: Copy contents from container
       run: |
-        mkdir -p shared/output
-        docker cp resume-cont:/build/output shared/output
+        docker cp resume-cont:/build/output shared/
     - name: Upload data as artifact
       uses: actions/upload-artifact@v3
       with:

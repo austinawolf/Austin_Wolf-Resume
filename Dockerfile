@@ -8,4 +8,4 @@ ADD shared /build
 
 WORKDIR /build/source
 
-CMD ["pdflatex", "main.tex", "-output-directory=/build/output"]
+CMD ["pdflatex", "-output-directory=/build/output", "main.tex"]
