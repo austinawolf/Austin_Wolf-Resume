@@ -4,7 +4,8 @@
 docker build -t resume-env:latest .  
 
 # Run Locally
-docker run -it -v C:\Users\wolf3\dev\Austin_Wolf-Resume\shared:/build/ resume-env:latest /bin/bash
+docker run -it -v %cd%\shared:/build/ resume-env:latest /bin/bash
+
 
 # Run CI TODO
 docker run -it resume-env:latest --name asdf
