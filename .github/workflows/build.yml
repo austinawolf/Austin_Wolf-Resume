@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build PDF
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Source
@@ -20,7 +21,7 @@ jobs:
       run: docker run -v "$(pwd)/shared/output:/build/shared" resume-env:latest ./build.sh
 
     - name: Publish Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Austin_Wolf-resume
-        path: shared/output
+        path: /build/shared/output
