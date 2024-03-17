@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Image
 
 on:
   push:
@@ -7,21 +7,19 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
+    - name: Checkout Source
+      uses: actions/checkout@v4
+
+    - name: Build Docker Container
       run: docker build -t resume-env:latest .
-    - name: Run the Build
-      run: docker run  --name resume-cont resume-env:latest
-    - name: Copy contents from container
-      run: |
-        docker cp resume-cont:/build/output shared/
-    - name: Upload data as artifact
+
+    - name: Compile PDF
+      run: docker run -v "$(pwd)/shared/output:/build/shared/output" resume-env:latest ./build.sh
+
+    - name: Publish Artifact
       uses: actions/upload-artifact@v3
       with:
         name: Austin_Wolf-resume
