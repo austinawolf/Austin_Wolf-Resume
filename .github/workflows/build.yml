@@ -17,7 +17,7 @@ jobs:
       run: docker build -t resume-env:latest .
 
     - name: Compile PDF
-      run: docker run -v "$(pwd)/shared/output:/build/shared/output" resume-env:latest ./build.sh
+      run: docker run -v "$(pwd)/shared/output:/build/shared" resume-env:latest ./build.sh
 
     - name: Publish Artifact
       uses: actions/upload-artifact@v3
