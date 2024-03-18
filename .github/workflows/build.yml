@@ -22,7 +22,7 @@ jobs:
       run: docker build -t resume-env:latest .
 
     - name: Compile PDF
-      run: docker run -v "$(pwd)/shared/output:/build/shared/output" resume-env:latest ./build.sh
+      run: docker run -v "$(pwd)/shared/output:/build/output" resume-env:latest ./build.sh
 
     - name: Test
       run: ls /build/shared/output
@@ -31,10 +31,10 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Austin_Wolf-resume
-        path: /build/shared/output/*
+        path: /build/output/*
 
     - name: Release
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        files: /build/shared/output/Austin_Wolf-resume.pdf
+        files: /build/output/Austin_Wolf-resume.pdf
