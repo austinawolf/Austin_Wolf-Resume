@@ -25,7 +25,7 @@ jobs:
       run: docker run -v "$(pwd)/shared/output:/build/output" resume-env:latest ./build.sh
 
     - name: Test
-      run: ls /build/shared/output
+      run: ls /build/output
 
     - name: Publish Artifact
       uses: actions/upload-artifact@v4
