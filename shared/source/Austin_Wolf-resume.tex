@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -116,7 +116,7 @@
 \begin{itemize}
     \summaryItem{Firmware engineer in medical device and biotechnology industry with a passion for event-driven real-time embedded software architectures and networks}
     \summaryItem{Proficient in IEC-62304 compliant medical device software development, documentation, design verification, and best practices}
-    \summaryItem{Hands-on experience in debugging hard faults, race conditions, memory corruption, and other critical low level issues on ARM Cortex processors }
+    \summaryItem{Hands-on experience in debugging hard faults, race conditions, memory corruption, and other critical low level issues on ARM Cortex-A/R/M processors }
     \summaryItem{Expert in robust safety-critical embedded DevOps pipelines: build systems, version control, test-driven development, static analysis, continuous integration, deployment, hardware-in-the-loop testing}
   \end{itemize}
 
@@ -136,22 +136,22 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Illumina}{Feb 2023 -- Current}
-      {Senior Firmware Engineer}{San Diego, CA}
+      {Staff Firmware Engineer}{San Diego, CA}
       \resumeItemListStart
-        \resumeItem{Designed and implemented protobuf-based proof-of-concept communication framework for instrument software-firmware communication}
-        \resumeItem{Implemented C++ application for computer vision fiducial detection on NVIDIA Jetson Orin Nano using CUDA-enabled OpenCV}
-        \resumeItem{Ported latest Eclipse ThreadX RTOS to STM32H7 and Zynq 7000 SoCs}
-        \resumeItem{Optimized continuous integration/release build pipeline to reduce build times by 6x and improve pain points in deployment workflow}
+        \resumeItem{Migrated embedded firmware on Zynq Ultrascale+ from Cortex-A53 to Cortex-R5, including platform driver porting, MPU configuration, low-level assembly initialization, custom bootloader implementation, and SEGGER J-Link support setup}
+        \resumeItem{Architected a protobuf-based, RPC-style communication framework for firmware-software Ethernet messaging, significantly improving memory usage, latency, and developer usability}
+        \resumeItem{Led multiple initiatives to strengthen compliance with IEC 62304 and software development lifecycle procedures, including unit test framework down-select, static analysis integration, formalized release/version control, and creation of design documentation templates}
+        \resumeItem{Developed a C++ application for fiducial detection on NVIDIA Jetson Orin Nano using CUDA-accelerated OpenCV, porting a Python-based computer vision algorithm to C++ for real-time performance}
+        \resumeItem{Ported the latest Eclipse ThreadX RTOS and NetX network stack STM32H7, Zynq-7000, and Zynq Ultrascale+ SoCs, enabling unified OS support across platforms}
+        \resumeItem{Optimized GitHub Actions CI/release pipeline, reducing build times by 8× and resolving pain points in deployment workflow}
+        \resumeItem{Collaborated with cybersecurity teams to learn firmware security best practices, develop a threat model, and create a cybersecurity FMEA for firmware on Illumina instruments}
       \resumeItemListEnd
     \resumeSubheading
       {Novo Engineering}{July 2019 -- Feb 2023}
       {Senior Firmware Engineer}{Vista, CA}
       \resumeItemListStart
-      \resumeItem{Worked directly with clients to design robust embedded products for broad range of industries in small cross-disciplinary
-      product development teams}
-        \resumeItem{Project Recell: led implementation of full closed-loop PID motor control stack on STM32F4 processor for precise robotic skin cell disaggregation using complex coordinate motion}
+        \resumeItem{Project Recell: led implementation of full closed-loop PID motor control stack on STM32F4 processor for precise robotic skin cell disaggregation using complex coordinated motion}
         \resumeItem{Project Bioreactor: designed and implemented multi-node CANopen network for mammalian cell bioreactor consisting of closed-loop heaters, vector-controlled DC brushless motors, stepper driven peristaltic pumps and other embedded sensors}     
-        \resumeItem{Project Smart Capsule: resolved critical power management issues and optimized manufacturing workflow in ingestible electromechnical pill-sized prototype medical device running on STM32L0}
         \resumeItem{Project BEST: assisted team in bug squashing, software tool validation, writing test protocols, managing verification matrix, and design FMEA effort during IEC-62304 design verification of low-power wearable medical device }
         \resumeItemListEnd
     \resumeSubheading
@@ -166,10 +166,11 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C, Python, C++, C\#, Protobuf, Make, Kotlin, Java} \\
-     \textbf{SoCs}{: STM32H7, STM32F4, STM32L0, nrf52, Zynq, PIC32, AVR} \\
-     \textbf{Common Firmware Concepts}{: BLE, TCP, UART, I2C, SPI, CAN, CANopen, ADC, Ethernet, FIR/IIR } \\
-     \textbf{Common Debug Tools}{: Logic Analyzers, Oscilloscopes, Power Analyzers }
+     \textbf{Languages}{: C, Python, C++, C\#, Assembly (ARM-v7-A/R/M), Protobuf, Make, Rust} \\
+     \textbf{SoCs}{: STM32H7, STM32F4, STM32L0, nrf52, Zynq Ultrascale, Zynq 7000, PIC32, AVR} \\
+     \textbf{Firmware Concepts}{: BLE, TCP, I2C, SPI, CAN, Ethernet, FIR/IIR, PID, BLDC, Steppers } \\
+     \textbf{Techologies}{: FreeRTOS, ThreadX, NetX, lwip, SEGGER/Ozone, GDB, OpenOCD,  } \\
+     \textbf{Debug Tools}{: Logic Analyzers, Oscilloscopes, Power Analyzers, }
     }}
  \end{itemize}
 
