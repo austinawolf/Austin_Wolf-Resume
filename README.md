@@ -14,5 +14,5 @@ docker run -it -v %cd%\shared:/build/ resume-env:latest /bin/bash
 
 ### Run (Ubuntu)
 ```
-docker run -v "$(pwd)/shared:/build/" resume-env:latest /bin/bash
+docker run -it -v "$(pwd)/shared:/build/" resume-env:latest /bin/bash
 ```
