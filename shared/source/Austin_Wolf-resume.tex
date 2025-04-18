@@ -11,6 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{hyperref}
 \input{glyphtounicode}
 
 
@@ -111,15 +112,6 @@
     \href{https://github.com/austinawolf}{www.github.com/austinawolf}
 \end{center}
 
-%-----------SUMMARY-----------
-\section*{Summary}
-\begin{itemize}
-    \summaryItem{Firmware engineer in medical device and biotechnology industry with a passion for event-driven real-time embedded software architectures and networks}
-    \summaryItem{Proficient in IEC-62304 compliant medical device software development, documentation, design verification, and best practices}
-    \summaryItem{Hands-on experience in debugging hard faults, race conditions, memory corruption, and other critical low level issues on ARM Cortex-A/R/M processors }
-    \summaryItem{Expert in robust safety-critical embedded DevOps pipelines: build systems, version control, test-driven development, static analysis, continuous integration, deployment, hardware-in-the-loop testing}
-  \end{itemize}
-
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
@@ -138,39 +130,44 @@
       {Illumina}{Feb 2023 -- Current}
       {Staff Firmware Engineer}{San Diego, CA}
       \resumeItemListStart
-        \resumeItem{Migrated embedded firmware on Zynq Ultrascale+ from Cortex-A53 to Cortex-R5, including platform driver porting, MPU configuration, low-level assembly initialization, custom bootloader implementation, and SEGGER J-Link support setup}
-        \resumeItem{Architected a protobuf-based, RPC-style communication framework for firmware-software Ethernet messaging, significantly improving memory usage, latency, and developer usability}
-        \resumeItem{Led multiple initiatives to strengthen compliance with IEC 62304 and software development lifecycle procedures, including unit test framework down-select, static analysis integration, formalized release/version control, and creation of design documentation templates}
-        \resumeItem{Developed a C++ application for fiducial detection on NVIDIA Jetson Orin Nano using CUDA-accelerated OpenCV, porting a Python-based computer vision algorithm to C++ for real-time performance}
-        \resumeItem{Ported the latest Eclipse ThreadX RTOS and NetX network stack STM32H7, Zynq-7000, and Zynq Ultrascale+ SoCs, enabling unified OS support across platforms}
+        \resumeItem{Migrated embedded firmware on Zynq UltraScale+ from Cortex-A53 to Cortex-R5, including platform driver porting, MPU configuration, low-level startup code, custom bootloader implementation, and SEGGER J-Link support setup}
+        \resumeItem{Architected a protobuf-based, RPC-style communication framework proof-of-concept for instrument firmware-software TCP messaging, reducing memory usage, decreasing latency, and improving developer usability}
+        \resumeItem{Created and maintained an internal pip-installable Python library and CLI application to communicate with firmware on Illumina instruments via TCP; supported various internal protocols to streamline tasks like firmware upgrade and diagnostics retrieval, and simplify Python script development for engineers across R\&D department}
+        \resumeItem{Developed a C++ application for fiducial detection on NVIDIA Jetson Orin Nano using CUDA-accelerated OpenCV, porting a Python-based computer vision algorithm to C++}
+        \resumeItem{Ported the latest Eclipse ThreadX RTOS and NetX network stack to STM32H7, Zynq-7000, and Zynq UltraScale+ SoCs, enabling unified OS support across platforms}
+        \resumeItem{Led multiple initiatives to strengthen compliance with software development lifecycle procedures, including unit test framework down-select for test driven development, static analysis integration, formalized release/version control, improved git flows, and creation of design documentation templates}
         \resumeItem{Optimized GitHub Actions CI/release pipeline, reducing build times by 8× and resolving pain points in deployment workflow}
         \resumeItem{Collaborated with cybersecurity teams to learn firmware security best practices, develop a threat model, and create a cybersecurity FMEA for firmware on Illumina instruments}
       \resumeItemListEnd
     \resumeSubheading
-      {Novo Engineering}{July 2019 -- Feb 2023}
+      {Novo Engineering}{June 2019 -- Feb 2023}
       {Senior Firmware Engineer}{Vista, CA}
       \resumeItemListStart
-        \resumeItem{Project Recell: led implementation of full closed-loop PID motor control stack on STM32F4 processor for precise robotic skin cell disaggregation using complex coordinated motion}
-        \resumeItem{Project Bioreactor: designed and implemented multi-node CANopen network for mammalian cell bioreactor consisting of closed-loop heaters, vector-controlled DC brushless motors, stepper driven peristaltic pumps and other embedded sensors}     
+        \resumeItem{Project Recell: led implementation of full closed-loop PID motor control stack on STM32F4 processor for precise robotic skin cell disaggregation using complex coordinated motion (co-inventor on US Patent No. 20240209296A1)}
+        \resumeItem{Project Bioreactor: designed and implemented multi-node CANopen network for mammalian cell bioreactor consisting of closed-loop heaters, vector-controlled DC brushless motors, stepper-driven peristaltic pumps and other embedded sensors}     
+        \resumeItem{Project Smart Capsule: resolved critical power management issues, optimized manufacturing workflow, and refactored radio handshake routine on ingestible electromechanical medical device prototype running on STM32L0}
         \resumeItem{Project BEST: assisted team in bug squashing, software tool validation, writing test protocols, managing verification matrix, and design FMEA effort during IEC-62304 design verification of low-power wearable medical device }
         \resumeItemListEnd
     \resumeSubheading
       {San Diego State University}{Jan 2018 -- May 2019}
       {Graduate Research Assistant}{San Diego, CA}
       \resumeItemListStart
-        \resumeItem{Worked with Professor Yusuf Ozturk and other professors in the Smart Health Institute to design and develop a Bluetooth motion sensor for body kinematics on Nordic nrf52840 SoC}
-      \resumeItemListEnd
+        \resumeItem{Worked with Professor Yusuf Ozturk and other professors in the Smart Health Institute to design and develop a low-power Bluetooth motion sensor firmware for body kinematics on Nordic NRF52840 SoC}
+        \resumeItem{Implemented I2C drivers for high-performance 9-axis inertial measurement unit (ICM-20948), created calibration routine, and tuned sensor-fusion algorithm to compute orientation from accelerometer, gyroscope, and magnetometer data}
+        \resumeItem{Designed BLE service for controlling application state, streaming real-time sensor data and replaying data from non-volatile memory}
+        \resumeItem{Re-purposed graduate research into an open source project for analyzing disc-golf flight characteristics, see \url{github.com/austinawolf/flight-sensor}}
+        \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C, Python, C++, C\#, Assembly (ARMv7-A/R/M), Make, Rust, Protobuf} \\
-     \textbf{SoCs}{: STM32H7, STM32F4, STM32L0, nrf52, Zynq Ultrascale, Zynq 7000, PIC32, AVR} \\
+     \textbf{Languages}{: C, Python, Make, C++, C\#, Rust, Assembly (ARMv7-A/R/M), Protobuf} \\
+     \textbf{SoCs}{: STM32H7, STM32F4, STM32L0, NRF52, Zynq UltraScale+, Zynq 7000, PIC32, AVR} \\
      \textbf{Embedded Concepts}{: BLE, TCP, I2C, SPI, UART, ADC, CAN, Ethernet, FIR/IIR, PID, BLDC, Steppers } \\
-     \textbf{Technologies}{: GCC, FreeRTOS, ThreadX, NetX, SEGGER J-Link, nanopb, GDB, Docker, wolfSSL, Ceedling, Github Actions} \\
-     \textbf{Debug Tools}{: Logic Analyzers, Oscilloscopes, Power Analyzers, }
+     \textbf{Technologies}{: GCC, FreeRTOS, ThreadX, NetX, SEGGER J-Link, nanopb, GDB, Docker, wolfSSL, Ceedling, OpenCV} \\
+     \textbf{Debug Tools}{: Logic Analyzers, Oscilloscopes, Power Analyzers}
     }}
  \end{itemize}
 
